@@ -1,0 +1,11 @@
+{
+    "state": {
+        "presence": false
+    },
+    "name": "Presence State Downstairs",
+    "modelid": "RoomPresenseState",
+    "swversion": "1.0",
+    "type": "CLIPPresence",
+    "uniqueid": "5f890f3d-3550-4cf6-b527-1dd5c7348dd8",
+    "manufacturername": "Paulskit"
+}

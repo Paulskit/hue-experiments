@@ -1,0 +1,259 @@
+{
+	"1": {
+		"name": "XFDMotion6",
+		"owner": "ae84d19f-e651-432e-9123-ad2b478af89f",
+		"created": "2021-03-20T10:18:47",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": false,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "true"
+			},
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "dx"
+			},
+			{
+				"address": "/sensors/7/state/dark",
+				"operator": "eq",
+				"value": "true"
+			},
+			{
+				"address": "/sensors/69/state/status",
+				"operator": "lt",
+				"value": "1"
+			},
+			{
+				"address": "/groups/2/state/any_on",
+				"operator": "eq",
+				"value": "false"
+			}
+		],
+		"actions": [
+			{
+				"address": "/scenes/1sApMEDxxfMXLsK",
+				"method": "PUT",
+				"body": {
+					"storelightstate": true
+				}
+			},
+			{
+				"address": "/groups/2/action",
+				"method": "PUT",
+				"body": {
+					"scene": "6tkSDi9qZq9fwRy"
+				}
+			},
+			{
+				"address": "/sensors/69/state",
+				"method": "PUT",
+				"body": {
+					"status": 1
+				}
+			}
+		]
+	},
+	"2": {
+		"name": "XFDMotion6.dark",
+		"owner": "ae84d19f-e651-432e-9123-ad2b478af89f",
+		"created": "2021-03-20T10:18:48",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": false,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "true"
+			},
+			{
+				"address": "/sensors/7/state/dark",
+				"operator": "eq",
+				"value": "true"
+			},
+			{
+				"address": "/sensors/7/state/dark",
+				"operator": "dx"
+			},
+			{
+				"address": "/sensors/69/state/status",
+				"operator": "lt",
+				"value": "1"
+			},
+			{
+				"address": "/groups/2/state/any_on",
+				"operator": "eq",
+				"value": "false"
+			}
+		],
+		"actions": [
+			{
+				"address": "/scenes/1sApMEDxxfMXLsK",
+				"method": "PUT",
+				"body": {
+					"storelightstate": true
+				}
+			},
+			{
+				"address": "/groups/2/action",
+				"method": "PUT",
+				"body": {
+					"scene": "6tkSDi9qZq9fwRy"
+				}
+			},
+			{
+				"address": "/sensors/69/state",
+				"method": "PUT",
+				"body": {
+					"status": 1
+				}
+			}
+		]
+	},
+	"3": {
+		"name": "Sensor 6.dim",
+		"owner": "ae84d19f-e651-432e-9123-ad2b478af89f",
+		"created": "2021-03-20T10:18:49",
+		"lasttriggered": "2021-03-20T10:24:05",
+		"timestriggered": 4,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "false"
+			},
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "ddx",
+				"value": "PT00:00:05"
+			},
+			{
+				"address": "/sensors/69/state/status",
+				"operator": "eq",
+				"value": "1"
+			}
+		],
+		"actions": [
+			{
+				"address": "/sensors/69/state",
+				"method": "PUT",
+				"body": {
+					"status": 2
+				}
+			}
+		]
+	},
+	"4": {
+		"name": "Sensor 6.restore",
+		"owner": "ae84d19f-e651-432e-9123-ad2b478af89f",
+		"created": "2021-03-20T10:18:49",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "true"
+			},
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "dx"
+			},
+			{
+				"address": "/sensors/69/state/status",
+				"operator": "gt",
+				"value": "1"
+			}
+		],
+		"actions": [
+			{
+				"address": "/sensors/69/state",
+				"method": "PUT",
+				"body": {
+					"status": 1
+				}
+			}
+		]
+	},
+	"5": {
+		"name": "Sensor 6.finalize",
+		"owner": "ae84d19f-e651-432e-9123-ad2b478af89f",
+		"created": "2021-03-20T10:18:49",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "false"
+			},
+			{
+				"address": "/sensors/69/state/status",
+				"operator": "ddx",
+				"value": "PT00:00:10"
+			},
+			{
+				"address": "/sensors/69/state/status",
+				"operator": "gt",
+				"value": "1"
+			}
+		],
+		"actions": [
+			{
+				"address": "/groups/2/action",
+				"method": "PUT",
+				"body": {
+					"scene": "1sApMEDxxfMXLsK"
+				}
+			},
+			{
+				"address": "/sensors/69/state",
+				"method": "PUT",
+				"body": {
+					"status": 0
+				}
+			}
+		]
+	},
+	"6": {
+		"name": "Sensor 6.arm",
+		"owner": "ae84d19f-e651-432e-9123-ad2b478af89f",
+		"created": "2021-03-20T10:18:50",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/groups/2/state/any_on",
+				"operator": "eq",
+				"value": "false"
+			},
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "false"
+			}
+		],
+		"actions": [
+			{
+				"address": "/sensors/69/state",
+				"method": "PUT",
+				"body": {
+					"status": 0
+				}
+			}
+		]
+	}
+}

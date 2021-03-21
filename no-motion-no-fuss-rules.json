@@ -1,0 +1,279 @@
+{
+	"1": {
+		"name": "10:",
+		"owner": "c936ee94-ebd3-4231-b4a1-8b37ece280a8",
+		"created": "2021-03-20T10:36:04",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "true"
+			},
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "dx"
+			},
+			{
+				"address": "/sensors/7/state/lightlevel",
+				"operator": "lt",
+				"value": "23076"
+			},
+			{
+				"address": "/sensors/71/state/status",
+				"operator": "lt",
+				"value": "1"
+			},
+			{
+				"address": "/groups/2/state/any_on",
+				"operator": "eq",
+				"value": "false"
+			}
+		],
+		"actions": [
+			{
+				"address": "/scenes/qtLUo-PUNy9AjhL",
+				"method": "PUT",
+				"body": {
+					"storelightstate": true
+				}
+			},
+            // set presense
+			{
+				"address": "/sensors/71/state",
+				"method": "PUT",
+				"body": {
+					"status": 1
+				}
+			}
+		]
+	},
+    // enable configured scene
+	"2": {
+		"name": "12:",
+		"owner": "c936ee94-ebd3-4231-b4a1-8b37ece280a8",
+		"created": "2021-03-20T10:36:04",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/71/state/status",
+				"operator": "eq",
+				"value": "1"
+			},
+			{
+				"address": "/sensors/71/state/lastupdated",
+				"operator": "dx"
+			}
+		],
+		"actions": [
+			{
+				"address": "/groups/2/action",
+				"method": "PUT",
+				"body": {
+					"scene": "6tkSDi9qZq9fwRy"
+				}
+			}
+		]
+	},
+    // before dim
+	"3": {
+		"name": "13:",
+		"owner": "c936ee94-ebd3-4231-b4a1-8b37ece280a8",
+		"created": "2021-03-20T10:36:04",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "false"
+			},
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "ddx",
+				"value": "PT00:00:15"
+			},
+			{
+				"address": "/sensors/71/state/status",
+				"operator": "eq",
+				"value": "1"
+			},
+			{
+				"address": "/groups/2/state/any_on",
+				"operator": "eq",
+				"value": "true"
+			}
+		],
+		"actions": [
+			{
+				"address": "/scenes/Vx0LYHjkOA6u7y7",
+				"method": "PUT",
+				"body": {
+					"storelightstate": true
+				}
+			},
+			{
+				"address": "/sensors/71/state",
+				"method": "PUT",
+				"body": {
+					"status": 2
+				}
+			}
+		]
+	},
+    // dim
+	"4": {
+		"name": "14:",
+		"owner": "c936ee94-ebd3-4231-b4a1-8b37ece280a8",
+		"created": "2021-03-20T10:36:04",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/71/state/status",
+				"operator": "eq",
+				"value": "2"
+			},
+			{
+				"address": "/sensors/71/state/lastupdated",
+				"operator": "ddx",
+				"value": "PT00:00:01"
+			}
+		],
+		"actions": [
+			{
+				"address": "/groups/2/action",
+				"method": "PUT",
+				"body": {
+					"transitiontime": 10,
+					"bri_inc": -127
+				}
+			}
+		]
+	},
+    // if it was dimmed but I moved again
+	"5": {
+		"name": "15:",
+		"owner": "c936ee94-ebd3-4231-b4a1-8b37ece280a8",
+		"created": "2021-03-20T10:36:04",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "true"
+			},
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "dx"
+			},
+			{
+				"address": "/sensors/71/state/status",
+				"operator": "gt",
+				"value": "1"
+			}
+		],
+		"actions": [
+			{
+				"address": "/groups/2/action",
+				"method": "PUT",
+				"body": {
+					"scene": "Vx0LYHjkOA6u7y7"
+				}
+			},
+			{
+				"address": "/sensors/71/state",
+				"method": "PUT",
+				"body": {
+					"status": 1
+				}
+			}
+		]
+	},
+	"6": {
+		"name": "16:",
+		"owner": "c936ee94-ebd3-4231-b4a1-8b37ece280a8",
+		"created": "2021-03-20T10:36:05",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/71/state/status",
+				"operator": "eq",
+				"value": "2"
+			},
+			{
+				"address": "/sensors/71/state/lastupdated",
+				"operator": "ddx",
+				"value": "PT00:00:30"
+			},
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "false"
+			}
+		],
+		"actions": [
+			{
+				"address": "/groups/2/action",
+				"method": "PUT",
+				"body": {
+					"scene": "qtLUo-PUNy9AjhL",
+					"transitiontime": 1
+				}
+			},
+			{
+				"address": "/sensors/71/state",
+				"method": "PUT",
+				"body": {
+					"status": 0
+				}
+			}
+		]
+	},
+	"7": {
+		"name": "17:",
+		"owner": "c936ee94-ebd3-4231-b4a1-8b37ece280a8",
+		"created": "2021-03-20T10:36:05",
+		"lasttriggered": "none",
+		"timestriggered": 0,
+		"status": "enabled",
+		"recycle": true,
+		"conditions": [
+			{
+				"address": "/sensors/6/state/presence",
+				"operator": "eq",
+				"value": "false"
+			},
+			{
+				"address": "/groups/2/state/any_on",
+				"operator": "eq",
+				"value": "false"
+			}
+		],
+		"actions": [
+			{
+				"address": "/sensors/71/state",
+				"method": "PUT",
+				"body": {
+					"status": 0
+				}
+			}
+		]
+	}
+}

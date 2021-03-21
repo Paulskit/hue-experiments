@@ -1,0 +1,70 @@
+{
+	"state": {
+		"on": false,
+		"bri": 122,
+		"hue": 4170,
+		"sat": 119,
+		"effect": "none",
+		"xy": [
+			0.4864,
+			0.3746
+		],
+		"ct": 417,
+		"alert": "none",
+		"colormode": "xy",
+		"mode": "homeautomation",
+		"reachable": true
+	},
+	"swupdate": {
+		"state": "noupdates",
+		"lastinstall": "2020-03-11T12:48:16"
+	},
+	"type": "Extended color light",
+	"name": "Остров",
+	"modelid": "LST002",
+	"manufacturername": "Signify Netherlands B.V.",
+	"productname": "Hue lightstrip plus",
+	"capabilities": {
+		"certified": true,
+		"control": {
+			"mindimlevel": 40,
+			"maxlumen": 1600,
+			"colorgamuttype": "C",
+			"colorgamut": [
+				[
+					0.6915,
+					0.3083
+				],
+				[
+					0.17,
+					0.7
+				],
+				[
+					0.1532,
+					0.0475
+				]
+			],
+			"ct": {
+				"min": 153,
+				"max": 500
+			}
+		},
+		"streaming": {
+			"renderer": true,
+			"proxy": true
+		}
+	},
+	"config": {
+		"archetype": "huelightstrip",
+		"function": "mixed",
+		"direction": "omnidirectional",
+		"startup": {
+			"mode": "powerfail",
+			"configured": true
+		}
+	},
+	"uniqueid": "00:17:88:01:03:cf:dc:e2-0b",
+	"swversion": "1.50.2_r30933",
+	"swconfigid": "59F2C3A3",
+	"productid": "Philips-LST002-1-LedStripsv3"
+}
