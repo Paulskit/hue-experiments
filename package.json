@@ -9,8 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "huejay": "^1.9.0",
-    "jshue": "^2.1.1",
-    "node-fetch": "^2.6.1"
+    "huejay": "^1.9.0"
   }
 }
