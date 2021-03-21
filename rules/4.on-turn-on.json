@@ -1,0 +1,30 @@
+{
+    "name": "P.OnTurnOn",
+    "conditions": [
+        {
+            "address": "/sensors/78/state/presence",
+            "operator": "eq",
+            "value": "true"
+        },
+        {
+            "address": "/sensors/78/state/presence",
+            "operator": "dx"
+        }
+    ],
+    "actions": [
+        {
+            "address": "/scenes/L4vUERCGxBQMCHX",
+            "method": "PUT",
+            "body": {
+                "storelightstate": true
+            }
+        },
+        {
+            "address": "/groups/2/action",
+            "method": "PUT",
+            "body": {
+                "scene": "fVJTc2sK4aaAnul"
+            }
+        }
+    ]
+}

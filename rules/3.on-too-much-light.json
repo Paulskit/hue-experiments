@@ -1,0 +1,24 @@
+{
+    "name": "P.OnTooMuchLight",
+    "conditions": [
+        {
+            "address": "/sensors/7/state/dark",
+            "operator": "eq",
+            "value": "false"
+        },
+        {
+            "address": "/sensors/7/state/lastupdated",
+            "operator": "ddx",
+            "value": "PT00:01:00"
+        }
+    ],
+    "actions": [
+        {
+            "address": "/sensors/78/state",
+            "method": "PUT",
+            "body": {
+                "presence": false
+            }
+        }
+    ]
+}

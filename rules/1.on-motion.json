@@ -1,0 +1,29 @@
+{
+    "name": "P.OnMotionDetected",
+    "conditions": [
+        {
+            "address": "/sensors/6/state/presence",
+            "operator": "eq",
+            "value": "true"
+        },
+        {
+            "address": "/sensors/7/state/dark",
+            "operator": "eq",
+            "value": "true"
+        },
+        {
+            "address": "/groups/2/state/any_on",
+            "operator": "eq",
+            "value": "false"
+        }
+    ],
+    "actions": [
+        {
+            "address": "/sensors/78/state",
+            "method": "PUT",
+            "body": {
+                "presence": true
+            }
+        }
+    ]
+}

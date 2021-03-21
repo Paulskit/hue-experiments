@@ -1,0 +1,23 @@
+{
+    "name": "P.OnTurnOff",
+    "conditions": [
+        {
+            "address": "/sensors/78/state/presence",
+            "operator": "eq",
+            "value": "false"
+        },
+        {
+            "address": "/sensors/78/state/presence",
+            "operator": "dx"
+        }
+    ],
+    "actions": [
+        {
+            "address": "/groups/2/action",
+            "method": "PUT",
+            "body": {
+                "scene": "L4vUERCGxBQMCHX"
+            }
+        }
+    ]
+}
